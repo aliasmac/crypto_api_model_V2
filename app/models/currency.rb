@@ -37,7 +37,8 @@ class Currency < ActiveRecord::Base
   def self.get_latest_prices
     # Lists USD price for each individual token for all currencies and displays alphabetically.
     get_api_data["data"].each do |coin_hash|
-      p "#{coin_hash["name"]}: $#{coin_hash["quote"]["USD"]["price"].round(2)}"
+      puts Paint["#{coin_hash["name"]}: $#{coin_hash["quote"]["USD"]["price"].round(3)} ", "#fff", "#000000", :bright]
+      puts ""
     end
   end
 
@@ -48,7 +49,9 @@ class Currency < ActiveRecord::Base
     latest_price = 0
     get_api_data["data"].each do |coin_hash|
       if coin_hash["symbol"] == currency.upcase
-        p "#{currency.downcase.upcase} is currently priced at: $#{coin_hash["quote"]["USD"]["price"].round(2)}"
+        puts Paint["#{currency.downcase.upcase} is currently priced at: $#{coin_hash["quote"]["USD"]["price"].round(3)} ", "#fff", "#000000", :bright]
+        puts ""
+        puts ""
         latest_price = coin_hash["quote"]["USD"]["price"].round(2)
       end
     end
@@ -59,9 +62,12 @@ class Currency < ActiveRecord::Base
     # Lists prices for all currencies by market cap.
     i = 1
     get_api_data["data"].each do |coin_hash|
-      puts "#{i}. #{coin_hash["name"]}'s market cap is $#{coin_hash["quote"]["USD"]["market_cap"].round(2)}".to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+      puts Paint["#{i}. #{coin_hash["name"]}'s market cap is $#{coin_hash["quote"]["USD"]["market_cap"].round(2)} ".to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse, "#fff", "#000000", :bright]
+      # puts "#{i}. #{coin_hash["name"]}'s market cap is $#{coin_hash["quote"]["USD"]["market_cap"].round(2)}".to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+      puts ""
       i += 1
     end
+    puts ""
     puts "Prices fetched"
   end
 

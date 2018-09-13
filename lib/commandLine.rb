@@ -28,13 +28,14 @@ class CommandLine
   end
 
   def self.prompt_user_name
-    puts Paint["To continue, please choose a user name to open you account", "#1e1e1e", "#47ff00", :bright]
+    system("clear")
+    puts Paint["To continue, please choose a user name to open your account", "#1e1e1e", "#47ff00", :bright]
     puts Paint["...", "#1e1e1e", "#47ff00", :blink]
     user_input = gets.chomp
     @user_name = User.create(name: user_input) #Change to find_by_or_create method
     @user_name.activate_account
     puts " "
-    puts Paint%["Congratulations, you have successfully opened your crypto trading account with %{crypto}!", "#1e1e1e", "#4ffd0c", :bright,
+    puts Paint%["Congratulations #{@user_name.name.upcase}, you have successfully opened your crypto trading account with %{crypto}!", "#1e1e1e", "#4ffd0c", :bright,
            crypto: ["CRYPT-O-ZONE\u2122", "#8c4dff"]
          ]
     puts " "
@@ -42,13 +43,14 @@ class CommandLine
 
 
   def self.menu
-    puts
+
     puts Paint["~(˘▾˘~)", "#1e1e1e", "#63fe27", :bright,]
     puts Paint["Please choose from one of the following options:", "#1e1e1e", "#63fe27", :bright,]
     puts Paint["'1' to add USD to your account", "#1e1e1e", "#80fd4f", :bright]
     puts Paint["'2' to enter our crypto data research centre", "#1e1e1e", "#93ff69", :bright]
     puts Paint["'3' to buy crypto currency", "#1e1e1e", "#80fd4f", :bright]
     puts Paint["'4' to sell crypto currency", "#1e1e1e", "#63fe27", :bright]
+    puts Paint["'5' to check balance'", "#1e1e1e", "#63fe27", :bright]
     puts Paint["'q' to exit application, not sure why you would ever want to leave though  ¯\_(ツ)_/¯", "#1e1e1e", "#4ffd0c", :bright]
     puts Paint["...", "#1e1e1e", "#47ff00", :blink]
     puts " "
@@ -56,6 +58,7 @@ class CommandLine
   end
 
   def self.menu_research_centre
+
         puts Paint["Welcome to the CRYPTO-O-ZONE\u2122 Research Centre\u2122", "#1e1e1e", "#63fe27", :bright]
         puts Paint["'1' to get the latest crypto prices", "#1e1e1e", "#80fd4f", :bright]
         puts Paint["'2' to get the latest market quote for a specific cryptocurrency", "#1e1e1e", "#93ff69", :bright]
@@ -66,6 +69,7 @@ class CommandLine
   end
 
   def self.research_centre_menu
+
     loop do
       CommandLine.menu_research_centre
       response = gets.chomp
@@ -73,6 +77,20 @@ class CommandLine
         CommandLine.user_get_latest_prices
       elsif response == '2'
         puts Paint["Please enter the the 'symbol' of the cryptocurrency that you would like a price for", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["You may choose from:", "#1e1e1e", "#93ff69", :bright]
+
+        puts Paint["1. Bitcoin (BTC)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["2. Ethereum (ETH)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["3. XRP (Ripple) (XRP)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["4. Bitcoin Cash (BCH)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["5. EOS (EOS)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["6. Stellar (XLM)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["7. Litecoin (LTC)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["8. Tether (USDT", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["9. Cardano (ADA)", "#1e1e1e", "#93ff69", :bright]
+        puts Paint["10. Monero (XMR)", "#1e1e1e", "#93ff69", :bright]
+
+
         puts Paint["...", "#1e1e1e", "#47ff00", :blink]
         puts " "
         user_input = gets.chomp
@@ -115,8 +133,7 @@ class CommandLine
     Currency.get_latest_prices
   end
 
-  def self.choose_currency_to_buy
-    system("clear")
+  def self.currency_options
     puts Paint["You may purchase the following cryptocurrencies:", "#1e1e1e", "#63fe27", :bright]
     puts Paint["- Bitcoin (BTC)", "#fff", "#f7941d", :bright]
     puts Paint["- Ethereum (ETH)", "#fff", "#2f3030", :bright]
@@ -128,6 +145,11 @@ class CommandLine
     puts Paint["- Tether (USDT)", "#fff", "#26a17b", :bright]
     puts Paint["- Cardano (ADA)", "#fff", "#0b2029", :bright]
     puts Paint["- Monero (XMR)", "#fff", "#ff6600", :bright]
+  end
+
+  def self.choose_currency_to_buy
+    system("clear")
+    self.currency_options
     puts Paint["Please enter symbol to make your choice!", "#1e1e1e", "#63fe27", :bright]
     puts Paint["...", "#1e1e1e", "#47ff00", :blink]
     puts " "
@@ -142,6 +164,9 @@ class CommandLine
     else
       puts Paint["Invalid amount", "#fff", :red, :blink]
     end
+    puts Paint%["Thank you for trading with %{crypto}!", "#1e1e1e", "#93ff69", :bright,
+        crypto: ["CRYPT-O-ZONE\u2122", "#8c4dff"]
+      ]
   end
 
   def self.choose_currency_to_sell
@@ -159,7 +184,7 @@ class CommandLine
     amount = gets.chomp.to_i
     @user_name.sell_crypto_currency(sym, amount)
     puts " "
-    puts Paint%["Thank you for trading %{crypto}!", "#1e1e1e", "#93ff69", :bright,
+    puts Paint%["Thank you for trading with %{crypto}!", "#1e1e1e", "#93ff69", :bright,
         crypto: ["CRYPT-O-ZONE\u2122", "#8c4dff"]
       ]
   end

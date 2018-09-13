@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def add_usd_to_balance(amount)
-    @user_balance[:USD] += amount
+      @user_balance[:USD] += amount
   end
 
 
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
       if !coins.include?(coin)
         puts "You have entered an incorrect symbol"
       elsif coins.include?(coin) && @user_balance[:USD] > cost
-        puts Paint["#{amount} #{coin} will cost you $#{cost} and your current balance is $#{format_number(@user_balance[:USD])}.","#1e1e1e", "#93ff69", :bright,]
+        puts Paint["#{format_number(amount)} #{coin} will cost you $#{format_number(cost)} and your current balance is $#{format_number(@user_balance[:USD])}.","#1e1e1e", "#93ff69", :bright,]
         puts Paint["Would you like to continue, 'y' or 'n'?", "#1e1e1e", "#80fd4f", :bright]
         puts Paint["...", "#1e1e1e", "#47ff00", :blink]
         puts " "
@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
           @user_balance[:"#{coin}"] += amount
           puts Paint["Transaction completed. Purchased #{amount} #{coin}. Your current balance is $#{format_number(@user_balance[:USD])}.","#1e1e1e", "#93ff69", :bright,]
         else
-          p Paint["Transaction aborted!!!", "#fff", :red, :blink]
+          puts Paint["Transaction aborted!!!", "#fff", :red, :blink]
         end
       elsif coins.include?(coin) && @user_balance[:USD] < cost
         puts Paint["I'm sorry, you don't have enough USD to make this purchase. Your current balance is $#{format_number(@user_balance[:USD])} and the cost is #{cost}#{coin}.", "#1e1e1e", "#80fd4f", :bright]
@@ -76,10 +76,18 @@ class User < ActiveRecord::Base
     if !coins.include?(coin)
       puts Paint["You have entered an incorrect symbol", "#fff", :red, :blink]
     elsif coins.include?(coin) && @user_balance[:"#{coin}"] >= amount
-      Transaction.create(currency_id: find_currency_id(coin), user_id: self.id, amount: amount)
-      @user_balance[:"#{coin}"] -= amount
-      @user_balance[:USD] += cost
-      puts Paint["Selling #{amount} #{coin} for #{cost}. Your new balance is $#{format_number(@user_balance[:USD])}.", "#1e1e1e", "#4ffd0c", :bright]
+      puts Paint["Would you like to continue, 'y' or 'n'?", "#1e1e1e", "#80fd4f", :bright]
+      puts Paint["...", "#1e1e1e", "#47ff00", :blink]
+      puts " "
+      user_input = gets.chomp
+        if user_input.downcase == 'y'
+        Transaction.create(currency_id: find_currency_id(coin), user_id: self.id, amount: amount)
+        @user_balance[:"#{coin}"] -= amount
+        @user_balance[:USD] += cost
+        puts Paint["Selling #{amount} #{coin} for #{cost}. Your new balance is $#{format_number(@user_balance[:USD])}.", "#1e1e1e", "#4ffd0c", :bright]
+        else
+        puts Paint["Transaction aborted!!!", "#fff", :red, :blink]
+        end
     elsif coins.include?(coin) && @user_balance[:"#{coin}"] < amount
       puts Paint["I'm sorry, you don't have enough #{coin} to make this sale.", "#1e1e1e", "#80fd4f", :bright]
     end
@@ -92,16 +100,16 @@ class User < ActiveRecord::Base
     puts Paint["Your current USD balance is: $#{format_number(@user_balance[:USD])}", "#1e1e1e", "#63fe27", :bright]
     puts Paint["##########################", "#1e1e1e", "#63fe27", :bright]
     puts Paint["Your current crypto balance is:", "#1e1e1e", "#63fe27", :bright]
-    puts Paint["BTC: #{user_balance[:BTC]}", "#fff", "#f7941d", :bright]
-    puts Paint["ETH: #{user_balance[:ETH]}", "#fff", "#2f3030", :bright]
-    puts Paint["XRP: #{user_balance[:XRP]}", "#fff", "#3674ad", :bright]
-    puts Paint["BCH: #{user_balance[:BCH]}", "#fff", "#4cc947", :bright]
-    puts Paint["EOS: #{user_balance[:EOS]}", "#fff", "#000", :bright]
-    puts Paint["XLM: #{user_balance[:XLM]}", "#fff", "#0eb8e8", :bright]
-    puts Paint["LTC: #{user_balance[:LTC]}", "#fff", "#6e6e6e", :bright]
-    puts Paint["USDT: #{user_balance[:USDT]}", "#fff", "#26a17b", :bright]
-    puts Paint["ADA: #{user_balance[:ADA]}", "#fff", "#0b2029", :bright]
-    puts Paint["XMR: #{user_balance[:XMR]}", "#fff", "#ff6600", :bright]
+    puts Paint["  BTC: #{user_balance[:BTC]} ", "#fff", "#f7941d", :bright]
+    puts Paint["  ETH: #{user_balance[:ETH]} ", "#fff", "#2f3030", :bright]
+    puts Paint["  XRP: #{user_balance[:XRP]} ", "#fff", "#3674ad", :bright]
+    puts Paint["  BCH: #{user_balance[:BCH]} ", "#fff", "#4cc947", :bright]
+    puts Paint["  EOS: #{user_balance[:EOS]} ", "#fff", "#000", :bright]
+    puts Paint["  XLM: #{user_balance[:XLM]} ", "#fff", "#0eb8e8", :bright]
+    puts Paint["  LTC: #{user_balance[:LTC]} ", "#fff", "#6e6e6e", :bright]
+    puts Paint["  USDT: #{user_balance[:USDT]}", "#fff", "#26a17b", :bright]
+    puts Paint["  ADA: #{user_balance[:ADA]} ", "#fff", "#0b2029", :bright]
+    puts Paint["  XMR: #{user_balance[:XMR]} ", "#fff", "#ff6600", :bright]
   end
 
   def get_transaction_history
