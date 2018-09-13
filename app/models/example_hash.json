@@ -1,0 +1,251 @@
+{
+  "status": {
+    "timestamp": "2018-09-10T12:33:33.172Z",
+    "error_code": 0,
+    "error_message": null,
+    "elapsed": 18,
+    "credit_count": 1
+  },
+  "data": [
+    {
+      "id": 1,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "slug": "bitcoin",
+      "circulating_supply": 17259925,
+      "total_supply": 17259925,
+      "max_supply": 21000000,
+      "date_added": "2013-04-28T00:00:00.000Z",
+      "num_market_pairs": 6059,
+      "cmc_rank": 1,
+      "last_updated": "2018-09-10T12:32:21.000Z",
+      "quote": {
+        "USD": {
+          "price": 6332.38570502,
+          "volume_24h": 3605350919.5773,
+          "percent_change_1h": 0.179438,
+          "percent_change_24h": -1.22498,
+          "percent_change_7d": -12.7655,
+          "market_cap": 109296502339.71733,
+          "last_updated": "2018-09-10T12:32:21.000Z"
+        }
+      }
+    },
+    {
+      "id": 1027,
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "slug": "ethereum",
+      "circulating_supply": 101870592.4053,
+      "total_supply": 101870592.4053,
+      "max_supply": null,
+      "date_added": "2015-08-07T00:00:00.000Z",
+      "num_market_pairs": 4200,
+      "cmc_rank": 2,
+      "last_updated": "2018-09-10T12:32:35.000Z",
+      "quote": {
+        "USD": {
+          "price": 197.09422502,
+          "volume_24h": 1458395548.20117,
+          "percent_change_1h": 0.247647,
+          "percent_change_24h": -3.18829,
+          "percent_change_7d": -31.8633,
+          "market_cap": 20078105462.450905,
+          "last_updated": "2018-09-10T12:32:35.000Z"
+        }
+      }
+    },
+    {
+      "id": 52,
+      "name": "XRP",
+      "symbol": "XRP",
+      "slug": "ripple",
+      "circulating_supply": 39650153121,
+      "total_supply": 99991852985,
+      "max_supply": 100000000000,
+      "date_added": "2013-08-04T00:00:00.000Z",
+      "num_market_pairs": 198,
+      "cmc_rank": 3,
+      "last_updated": "2018-09-10T12:33:03.000Z",
+      "quote": {
+        "USD": {
+          "price": 0.275201650714,
+          "volume_24h": 188171589.361811,
+          "percent_change_1h": 0.230903,
+          "percent_change_24h": -3.96581,
+          "percent_change_7d": -18.4118,
+          "market_cap": 10911787589.962059,
+          "last_updated": "2018-09-10T12:33:03.000Z"
+        }
+      }
+    },
+    {
+      "id": 1831,
+      "name": "Bitcoin Cash",
+      "symbol": "BCH",
+      "slug": "bitcoin-cash",
+      "circulating_supply": 17340650,
+      "total_supply": 17340650,
+      "max_supply": 21000000,
+      "date_added": "2017-07-23T00:00:00.000Z",
+      "num_market_pairs": 310,
+      "cmc_rank": 4,
+      "last_updated": "2018-09-10T12:32:23.000Z",
+      "quote": {
+        "USD": {
+          "price": 479.86390676,
+          "volume_24h": 269095571.316251,
+          "percent_change_1h": 0.146382,
+          "percent_change_24h": -1.60261,
+          "percent_change_7d": -23.5254,
+          "market_cap": 8321152054.757794,
+          "last_updated": "2018-09-10T12:32:23.000Z"
+        }
+      }
+    },
+    {
+      "id": 1765,
+      "name": "EOS",
+      "symbol": "EOS",
+      "slug": "eos",
+      "circulating_supply": 906245117.6,
+      "total_supply": 1006245119.9339,
+      "max_supply": null,
+      "date_added": "2017-07-01T00:00:00.000Z",
+      "num_market_pairs": 156,
+      "cmc_rank": 5,
+      "last_updated": "2018-09-10T12:32:28.000Z",
+      "quote": {
+        "USD": {
+          "price": 5.04351309241,
+          "volume_24h": 595353509.87135,
+          "percent_change_1h": 0.34855,
+          "percent_change_24h": -0.35097,
+          "percent_change_7d": -21.9559,
+          "market_cap": 4570659115.54824,
+          "last_updated": "2018-09-10T12:32:28.000Z"
+        }
+      }
+    },
+    {
+      "id": 512,
+      "name": "Stellar",
+      "symbol": "XLM",
+      "slug": "stellar",
+      "circulating_supply": 18783280041.0418,
+      "total_supply": 104264152998.073,
+      "max_supply": null,
+      "date_added": "2014-08-05T00:00:00.000Z",
+      "num_market_pairs": 115,
+      "cmc_rank": 6,
+      "last_updated": "2018-09-10T12:32:14.000Z",
+      "quote": {
+        "USD": {
+          "price": 0.191724933744,
+          "volume_24h": 52947485.3354604,
+          "percent_change_1h": 0.164534,
+          "percent_change_24h": -3.33516,
+          "percent_change_7d": -13.635,
+          "market_cap": 3601223121.3637366,
+          "last_updated": "2018-09-10T12:32:14.000Z"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Litecoin",
+      "symbol": "LTC",
+      "slug": "litecoin",
+      "circulating_supply": 58229177.5377429,
+      "total_supply": 58229177.5377429,
+      "max_supply": 84000000,
+      "date_added": "2013-04-28T00:00:00.000Z",
+      "num_market_pairs": 555,
+      "cmc_rank": 7,
+      "last_updated": "2018-09-10T12:33:02.000Z",
+      "quote": {
+        "USD": {
+          "price": 54.6675162894,
+          "volume_24h": 252400391.421659,
+          "percent_change_1h": 0.692248,
+          "percent_change_24h": -1.4245,
+          "percent_change_7d": -15.7827,
+          "market_cap": 3183244511.5629244,
+          "last_updated": "2018-09-10T12:33:02.000Z"
+        }
+      }
+    },
+    {
+      "id": 825,
+      "name": "Tether",
+      "symbol": "USDT",
+      "slug": "tether",
+      "circulating_supply": 2756421735.6243,
+      "total_supply": 3080109502.1043,
+      "max_supply": null,
+      "date_added": "2015-02-25T00:00:00.000Z",
+      "num_market_pairs": 1289,
+      "cmc_rank": 8,
+      "last_updated": "2018-09-10T12:32:24.000Z",
+      "quote": {
+        "USD": {
+          "price": 1.00138794431,
+          "volume_24h": 2338660243.45827,
+          "percent_change_1h": -0.141475,
+          "percent_change_24h": 0.0302866,
+          "percent_change_7d": 0.129952,
+          "market_cap": 2760247495.48822,
+          "last_updated": "2018-09-10T12:32:24.000Z"
+        }
+      }
+    },
+    {
+      "id": 2010,
+      "name": "Cardano",
+      "symbol": "ADA",
+      "slug": "cardano",
+      "circulating_supply": 25927070538,
+      "total_supply": 31112483745,
+      "max_supply": 45000000000,
+      "date_added": "2017-10-01T00:00:00.000Z",
+      "num_market_pairs": 47,
+      "cmc_rank": 9,
+      "last_updated": "2018-09-10T12:32:32.000Z",
+      "quote": {
+        "USD": {
+          "price": 0.0755571624613,
+          "volume_24h": 40495094.66754,
+          "percent_change_1h": 0.639783,
+          "percent_change_24h": -5.34566,
+          "percent_change_7d": -27.1679,
+          "market_cap": 1958975880.7852507,
+          "last_updated": "2018-09-10T12:32:32.000Z"
+        }
+      }
+    },
+    {
+      "id": 328,
+      "name": "Monero",
+      "symbol": "XMR",
+      "slug": "monero",
+      "circulating_supply": 16394080.0386029,
+      "total_supply": 16394080.0386029,
+      "max_supply": null,
+      "date_added": "2014-05-21T00:00:00.000Z",
+      "num_market_pairs": 95,
+      "cmc_rank": 10,
+      "last_updated": "2018-09-10T12:32:07.000Z",
+      "quote": {
+        "USD": {
+          "price": 106.209074258,
+          "volume_24h": 38660347.2440757,
+          "percent_change_1h": -0.359868,
+          "percent_change_24h": -0.221927,
+          "percent_change_7d": -14.9105,
+          "market_cap": 1741200064.211571,
+          "last_updated": "2018-09-10T12:32:07.000Z"
+        }
+      }
+    }
+    ]
+  }
