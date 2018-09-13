@@ -9,19 +9,23 @@ class Currency < ActiveRecord::Base
   has_many :users, through: :transactions
 
   def coins_you_can_buy
-    p "Thank you for choosing Crypto Billionaire'/s, we're here to make your dreams come true"
-    p "We sell the following cryptocurrencies:"
-    p "- Bitcoin"
-    p "- Ethereum"
-    p "- XRP (Ripple)"
-    p "- Bitcoin Cash"
-    p "- EOS"
-    p "- Stellar"
-    p "- Litecoin"
-    p "- Tether"
-    p "- Cardano"
-    p "- Monero"
-    p "Make you choice!"
+    system("clear")
+    puts Paint["Thank you for choosing Crypto Billionaire'/s, we're here to make your dreams come true", "#1e1e1e", "#63fe27", :bright]
+    puts " "
+    puts Paint["We sell the following cryptocurrencies:", "#1e1e1e", "#63fe27", :bright]
+    puts Paint["- Bitcoin", "#fff", "#f7941d", :bright]
+    puts Paint["- Ethereum", "#fff", "#f7941d", :bright]
+    puts Paint["- XRP (Ripple)", "#fff", "#3674ad", :bright]
+    puts Paint["- Bitcoin Cash", "#fff", "#4cc947", :bright]
+    puts Paint["- EOS", "#fff", "#000", :bright]
+    puts Paint["- Stellar", "#fff", "#0eb8e8", :bright]
+    puts Paint["- Litecoin", "#fff", "#6e6e6e", :bright]
+    puts Paint["- Tether", "#fff", "#26a17b", :bright]
+    puts Paint["- Cardano", "#fff", "#0b2029", :bright]
+    puts Paint["- Monero", "#fff", "#ff6600", :bright]
+    puts Paint["Make you choice!", "#1e1e1e", "#63fe27", :bright]
+    puts Paint["...", "#1e1e1e", "#47ff00", :blink]
+    puts " "
   end
 
   def self.get_api_data
